@@ -1,3 +1,6 @@
+import javaImg from "../assets/Image/java.jpg";
+import jsImg from "../assets/Image/js.png";
+import pythonImg from "../assets/Image/python.png";
 export default function ChannelSection() {
     const styles = {
     useprogramingimg : {
@@ -5,17 +8,13 @@ export default function ChannelSection() {
         height: "50px", 
         objectFit: "cover" ,
         marginRight : 10
+        
     }
     };
     const skillList = [
     {
         title: "프로그래밍언어",
-        images: [
-        "src/assets/Image/java.jpg",
-        "src/assets/Image/js.png",
-        "src/assets/Image/python.png",
-        "src/assets/Image/csharp.png",
-        ],
+        images: [javaImg, jsImg, pythonImg],
     },
     {
         title: "프레임워크",
@@ -49,7 +48,9 @@ export default function ChannelSection() {
     },
     ];
   return (
+    
     <div>
+        
       <h2 style={{ fontSize: "32px", color: "#000000ff", marginBottom: "20px" }}>
         Skill
       </h2>
