@@ -1,6 +1,5 @@
-import javaImg from "../assets/Image/java.jpg";
-import jsImg from "../assets/Image/js.png";
-import pythonImg from "../assets/Image/python.png";
+import {uvicorn,gemma3,cshop,spring,react, pypdf2,javaImg, jsImg, pythonImg,pptimg ,github,fastapi,postgre,unity} from "../assets/Image";
+
 export default function ChannelSection() {
     const styles = {
     useprogramingimg : {
@@ -14,36 +13,36 @@ export default function ChannelSection() {
     const skillList = [
     {
         title: "프로그래밍언어",
-        images: [javaImg, jsImg, pythonImg],
+        images: [javaImg, jsImg, pythonImg,cshop],
     },
     {
         title: "프레임워크",
         images: [
-        "src/assets/Image/react.png",
-        "src/assets/Image/spring.png",
-        "src/assets/Image/vue.png",
+        fastapi,
+        react,
+        spring,
         ],
     },
     {
         title: "라이브러리",
         images: [
-        "src/assets/Image/axios.png",
-        "src/assets/Image/recoil.png",
-        "src/assets/Image/tanstack.png",
+        pypdf2,
+
+        uvicorn
         ],
     },
     {
         title: "데이터베이스",
         images: [
-        "src/assets/Image/postgre.png",
-        "src/assets/Image/mongo.png",
+        postgre
         ],
     },
     {
-        title: "개발엔진",
+        title: "기타",
         images: [
-        "src/assets/Image/unity.png",
-        "src/assets/Image/unreal.png",
+        unity,
+        gemma3,
+        
         ],
     },
     ];
@@ -51,8 +50,8 @@ export default function ChannelSection() {
     
     <div>
         
-      <h2 style={{ fontSize: "32px", color: "#000000ff", marginBottom: "20px" }}>
-        Skill
+      <h2 className="metal-regular titlestyle" >
+        Skill.
       </h2>
       <div  >
             <ul>

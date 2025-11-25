@@ -1,32 +1,289 @@
-body {
-  margin: 0;
-  background: white;
-  font-family: system-ui, sans-serif;
-}
+  @media print {
+    .bottom-fixed {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 214.5mm !important; /* 필요만큼 아래로 밀기 */
+  }
+    .firstpage {
+      page-break-after: always !important;
+    }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .bodypage {
+      page-break-after: always !important;
+      margin-top: 30px;
+    }
 
-/* 가운데 콘텐츠 영역 */
-.content-wrapper {
-  width: min(1000px, 90%);
-  margin-top: 80px;
-}
+    .cardpage {
+      page-break-inside: avoid !important;
+      page-break-before: always !important;
+       margin-top: 30px;
+    }
 
-/* Contact - Channel 가로 배치 */
-.bottom-sections {
-  display: flex;
-  gap: 300px; /* A-B 사이 간격 조절 */
-  margin-top: 5px;
-}
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
 
-.metal-regular {
-  font-family: "Metal", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
+  header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    /* 배경을 넣어야 글씨가 안 겹침 */
+    border-bottom: 1px solid #eee;
+  }
+
+
+  body {
+    margin: 0;
+    background: white !important;
+    font-family: system-ui, sans-serif;
+  }
+
+
+
+  #root {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  /* 가운데 콘텐츠 영역 */
+  .content-wrapper {
+    width: min(1000px, 90%);
+    margin: 150px auto 0;
+
+  }
+
+  .hcenter {
+    display: flex;
+    /*justify-content: center;  가로 정렬 */
+    align-items: center;
+    /* 세로 정렬 */
+  }
+
+  .wcenter {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  /* Contact - Channel 가로 배치 */
+  .bottom-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 두 개의 열을 동일한 폭으로 */
+
+
+    width: 100%;
+    /* 양쪽 콘텐츠 너비가 자동 정렬됨 */
+  }
+
+
+  .metal-regular {
+    font-family: "Metal", serif;
+    font-weight: 400;
+    font-style: normal;
+
+  }
+
+
+
+  .experience-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .experience-card {
+    padding: 16px;
+    border-radius: 10px;
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-family: 'Pretendard', sans-serif;
+  }
+
+  .experience-card .title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+
+  }
+
+  .experience-card .company {
+    font-size: 14px;
+    color: #666;
+
+  }
+
+  .experience-card .date {
+    font-size: 13px;
+    color: #999;
+  }
+
+
+  .project-section {
+    width: 100%;
+    font-family: 'Pretendard', sans-serif;
+  }
+
+  .project-section h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .project-row {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 60px 60px;
+    align-items: center;
+    border-top: 1px solid #e6e6e6;
+  }
+
+  .project-name {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .project-period {
+    color: #555;
+  }
+
+  .project-link a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .project-link a:hover {
+    text-decoration: underline;
+  }
+
+  .prize {
+    width: 100%;
+    font-family: 'Pretendard', sans-serif;
+  }
+
+  .prize-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #e6e6e6;
+  }
+
+  /*라이센스*/
+  .license-title {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    padding: 5px;
+  }
+
+  .license-item {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+
+  .infotext {
+    margin-left: 20px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    padding: 0 10px;
+
+  }
+
+
+
+  .project-info-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    margin-top: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    font-family: "Pretendard", sans-serif;
+  }
+
+  .project-info-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .project-info-subtitle {
+    margin-top: 26px;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .project-info-row {
+    display: flex;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+  }
+
+  .project-info-row:last-child {
+    border-bottom: none;
+  }
+
+  .project-info-row .label {
+    width: 140px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .project-info-row .value {
+    flex: 1;
+    color: #111;
+  }
+
+  .project-info-url {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* a와 b 간 간격 */
+    margin-top: 16px;
+  }
+
+  .project-info-url a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .project-info-url a:hover {
+    opacity: 0.7;
+  }
+
+  .titlestyle {
+
+
+    padding-left: 10px;
+
+    border-radius: 20px;
+    border: 5px solid;
+    width: auto;
+
+    background-color: #7f7f7fff;
+    margin: 0px;
+    font-size: 32px;
+    color: white;
+  }
+
 
 
